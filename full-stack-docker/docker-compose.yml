@@ -1,0 +1,36 @@
+<<<<<<< HEAD
+version: "3.8"
+
+services:
+
+  backend:
+    build: .
+    ports: 
+       - "3000:3000"
+    volumes:
+      - app-data:/app/logs
+    networks:
+      - app-net
+
+volumes:
+    app-data:
+networks:
+    app-net:
+      driver: bridge
+=======
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    ports:
+     - "3001:3001"
+    container_name: node-backend
+    restart: always
+
+  frontend:
+    build: ./frontend
+    ports:
+     - "3000:3000"
+    container_name: node-frontend
+    restart: always
+>>>>>>> 375eb24 (New project adde)
